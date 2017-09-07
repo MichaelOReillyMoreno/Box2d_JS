@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<title>Game</title>
+</head>
+<body id="body">
+<canvas id="canvas">Este navegador no soporta el canvas</canvas>
+<div id="score">0 : 0</div>
+<script type="application/javascript" src="Box2d.min.js"></script>
+<script type="application/javascript" src="LvlMan.js"></script>
+<script type="application/javascript" src="Tile.js"></script>
+<script type="application/javascript" src="actor.js"></script>
+<script type="application/javascript" src="ball.js"></script>
+<script type="application/javascript" src="EventsMan.js"></script>
+<script type="application/javascript" src="GameManager.js"></script>
+</body>
+<script>
+	var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+	var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+	var cnvs = document.getElementById('canvas');
+	cnvs.style.left =((w / 2) - (9 * 64))+"px";
+	cnvs.style.top =((h / 2) - (6 * 64))+"px";
+	
+	
+	var scr = document.getElementById('score');
+	var x = 0;
+	var y = 0;
+	
+	var rect = cnvs.getBoundingClientRect();
+	var x = rect.left + (8 * 64) - (scr.style.width/2);
+	var y = rect.top;
+	
+	scr.style.left = x+"px";
+	scr.style.top =y+"px";
+
+</script>
+</html>
